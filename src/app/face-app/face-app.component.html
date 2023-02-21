@@ -1,11 +1,12 @@
 <div class="face-snap-card">
-    <h2>{{ title }}</h2>
-    <p>Mis en ligne le {{ createDate }}</p>
-    <img [src]="imgUrl" [alt]="title">
-    <p>{{ description }}</p>
+    <h2>{{ faceSnap.title }}</h2>
+    <p>Mis en ligne le {{ faceSnap.createDate }}</p>
+    <img [src]="faceSnap.imgUrl" [alt]="faceSnap.title">
+    <p>{{ faceSnap.description }}</p>
+    <p *ngIf="faceSnap.location">Photo prise à {{faceSnap.location}}</p>
     <p>
         <!--Chaque instance d'un component est totalement indépendante-->
         <button (click)="onSnap()">{{buttonText}}</button>
-        &#128151; {{snaps}}
+        &#128151; {{faceSnap.snaps}}
     </p>
 </div>
