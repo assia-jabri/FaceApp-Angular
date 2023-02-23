@@ -10,11 +10,7 @@ export class FaceAppComponent implements OnInit {
 
   @Input() faceSnap!: FaceSnap;
 
-  title!: string;
-  description!: string;
-  createDate!: Date;
-  snaps!: number;
-  imgUrl!: string;
+
   buttonText!: string;
 
 
@@ -28,6 +24,7 @@ export class FaceAppComponent implements OnInit {
       this.buttonText = 'Oops, un snap! ';
     } else {
       this.faceSnap.snaps--;
+
       this.buttonText = "Oh! Snap";
     }
   }

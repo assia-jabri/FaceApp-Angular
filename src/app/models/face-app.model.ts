@@ -5,5 +5,4 @@ export class FaceSnap {
     createDate!: Date;
     snaps!: number;
     location?: string;
-
 }
