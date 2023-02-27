@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FaceSnap } from '../models/face-app.model';
+import { FaceSnapsService } from '../services/face-snaps.service';
 
 @Component({
   selector: 'app-face-app',
@@ -8,11 +9,12 @@ import { FaceSnap } from '../models/face-app.model';
 })
 export class FaceAppComponent implements OnInit {
 
+  // angular automatically send and update data in the service which is the parent component to teh faceSnap property
+
   @Input() faceSnap!: FaceSnap;
 
-
   buttonText!: string;
-
+  constructor(private faceSnapsService: FaceSnapsService) { }
 
   ngOnInit() {
 
@@ -20,10 +22,10 @@ export class FaceAppComponent implements OnInit {
   }
   onSnap() {
     if (this.buttonText === "Oh! Snap") {
-      this.faceSnap.snaps++;
+      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'snap');
       this.buttonText = 'Oops, un snap! ';
     } else {
-      this.faceSnap.snaps--;
+      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'unsnap');
 
       this.buttonText = "Oh! Snap";
     }
