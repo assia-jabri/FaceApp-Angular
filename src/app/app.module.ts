@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { FaceAppComponent } from './face-app/face-app.component';
 import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
 import { HeaderComponent } from './header/header.component';
+import { LandingPageComponentComponent } from './landing-page-component/landing-page-component.component';
+import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FaceAppComponent,
     FaceSnapListComponent,
-    HeaderComponent
+    HeaderComponent,
+    LandingPageComponentComponent,
+    SingleFaceSnapComponent
   ],
   imports: [
     BrowserModule,

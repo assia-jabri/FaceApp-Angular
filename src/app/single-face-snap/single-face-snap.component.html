@@ -1,0 +1,13 @@
+<div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'Oops, un snap! ' }">
+    <h2>{{ faceSnap.title | titlecase }}</h2>
+    <p>Mis en ligne le {{ faceSnap.createDate | date : 'dd/MM/yy, à HH:mm'}}</p>
+    <img [src]="faceSnap.imgUrl" [alt]="faceSnap.title">
+    <p>{{ faceSnap.description }}</p>
+    <p *ngIf="faceSnap.location">Photo prise à {{faceSnap.location}}</p>
+    <p>
+    <p>
+        <!--Chaque instance d'un component est totalement indépendante-->
+        <button (click)="onSnap()">{{buttonText}}</button>
+        <span [ngStyle]="{color: 'rgb(0,'+ faceSnap.snaps*2 + ',0)'}">&#128512; {{faceSnap.snaps}}</span>
+    </p>
+</div>
