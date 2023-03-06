@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FaceSnap } from '../models/face-app.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-single-face-snap',
@@ -13,7 +14,8 @@ export class SingleFaceSnapComponent {
 
   buttonText!: string;
   constructor(private faceSnapsService: FaceSnapsService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
 
@@ -34,6 +36,9 @@ export class SingleFaceSnapComponent {
 
       this.buttonText = "Oh! Snap";
     }
+  }
+  Backbtn() {
+    this.router.navigateByUrl('/facesnaps');
   }
 
 
